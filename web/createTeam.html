@@ -1,0 +1,77 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team Creation</title>
+        <link rel="stylesheet" href="new_style.css" type="text/css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="JavaScript" type="text/javascript">
+           
+            function checkTeamCreationForm(){
+                    var myError = 0;
+                    var textError="";
+                    var idCourse = window.document.teamCreationForm.idCourse.value;
+                    var idStudent1 = window.document.teamCreationForm.idStudent1.value;
+                    var idStudent2 = window.document.teamCreationForm.idStudent2.value;
+                    var idStudent3 = window.document.teamCreationForm.idStudent3.value;
+                    var idStudent4 = window.document.teamCreationForm.idStudent4.value;
+                    var idStudent5 = window.document.teamCreationForm.idStudent5.value;
+                    if (idCourse===""){
+                        myError = myError + 1;
+                        textError=textError +"\n\n--Εισάγετε τον Κωδικό του Μαθήματος";
+                    }
+                    if (idStudent1===""){
+                        myError = myError + 1;
+                        textError=textError +"\n\n--Εισάγετε τον Κωδικό του 1ου Μαθητή";
+                    }
+                    if (idStudent2===""){
+                        myError = myError + 1;
+                        textError=textError +"\n\n--Εισάγετε τον Κωδικό του 2ου Μαθητή";
+                    }
+                    if (idStudent3===""){
+                        myError = myError + 1;
+                        textError=textError +"\n\n--Εισάγετε τον Κωδικό του 3ου Μαθητή";
+                    }
+                    if(myError>0){
+                        alert("Παρακαλώ Συμπληρώστε Σωστά τα Πεδία της Φόρμας:"+textError);
+                        return false;
+                    }
+           } 
+
+        </script>
+    </head>
+    <body bgcolor="#e6e6fa">
+    <h3><u><center>TEAM CREATION</center></u></h3>
+            <form method="GET" action="testServlet" onsubmit="return checkTeamCreationForm()" name ="teamCreationForm">
+    <table>
+        <tr>
+            <td>Κωδικός Mαθήματος :</td><td></td><td><input class="texts" type="text" name="idCourse" id="idCourse" /></td>
+        </tr>
+        <tr>
+            <td>Κωδικός 1ου Μαθητή :</td><td></td><td><input class="texts" type="text" name="idStudent1" id="idStudent1" /></td>
+        </tr>
+        <tr>
+            <td>Κωδικός 2ου Μαθητή :</td><td></td><td><input class="texts" type="text" name="idStudent2" id="idStudent2" /></td>
+        </tr>
+        <tr>
+            <td>Κωδικός 3ου Μαθητή :</td><td></td><td><input class="texts" type="text" name="idStudent3" id="idStudent3" /></td>
+        </tr>
+        <tr>
+            <td>Κωδικός 4ου Μαθητή :</td><td></td><td><input class="texts" type="text" name="idStudent4" id="idStudent4" value="" /></td>
+        </tr>
+        <tr>
+            <td>Κωδικός 5ου Μαθητή :</td><td></td><td><input class="texts" type="text" name="idStudent5" id="idStudent5" value="" /></td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+            <td><input class="button" type="submit" value="Create Team" name="show" /></td><td></td><td><input class="reset" type="button" value="Close" onclick="window.close();" /></td>
+        </tr>
+    </table>
+<input type="hidden" name="function" value="1"/>
+</form>
+    </body>
+</html>
